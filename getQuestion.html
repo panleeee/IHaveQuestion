@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="/socket.io/socket.io.js"></script>
+    <title>Document</title>
+    <style>
+        li{
+            font-size: 2rem;
+            margin: 1vh 0;
+        }
+    </style>
+    <script>
+        var socket = io();
+        socket.on('question',(data)=>{
+            console.log(data);
+            console.log(data.info);
+            console.log(data.desc);
+            var list = document.getElementById("questionList");
+            list.innerHTML  += "<li>"+data.info +" : "+data.desc+"</li>";
+        });
+    </script>
+</head>
+<body> 
+    <ul id="questionList">
+        <li>Hello world</li>
+    </ul>
+</body>
+</html>

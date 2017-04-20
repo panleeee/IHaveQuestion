@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="/socket.io/socket.io.js"></script>
+    <title>I have question</title>
+    <style>
+        body {
+            background-color: #89E84F;
+        }
+        
+        h1 {
+            text-align: center;
+            font-size: 8vw;
+            color: #fff;
+        }
+        
+        input {
+            font-size: 4vw;
+            margin-left: 13vw;
+            width: 70vw;
+            padding: 2vw;
+        }
+        
+        textarea {
+            margin-top: 4vh;
+            padding: 2vw;
+            width: 70vw;
+            margin-left: 13vw;
+            font-size: 6vw;
+            white-space: nowrap;
+        }
+        
+        button {
+            background-color: rgba(255, 255, 255, 1);
+            width: 40vw;
+            margin-top: 3vh;
+            margin-left: 30vw;
+            font-size: 10vw;
+            border-radius: 2vw;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>옥찬호 개발자님 <br> 질문있습니다!</h1>
+    <form action="/question" method="POST">
+        <input type="text" placeholder="학번과 이름을 입력해주세요" name="info">
+        <textarea name="question" cols="30" rows="10" placeholder="질문을 입력해주세요"></textarea>
+        <br>
+        <button>전송</button>
+    </form>
+</body>
+<script>
+    var socket = io();
+</script>
+</html>
